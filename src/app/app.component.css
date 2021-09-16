@@ -1,0 +1,29 @@
+button {padding: 10px 24px;
+background-color:  rgb(24, 129, 124, 0.918);
+font-weight: bold;
+font-size: medium;
+}
+body{
+    font-style: italic;
+    font-variant: small-caps;
+}
+.butdiv{
+    position: absolute;
+    
+    left: 50%;
+    transform: translate(-50%,-50%);
+   
+}
+
+*{
+    background-color: rgba(102, 173, 170);
+   
+
+}
+a{
+    background-color:  rgb(24, 129, 124, 0.918);
+    color: lightskyblue;
+    text-decoration-line: none;
+    font-style: oblique;
+    font-variant: small-caps;
+}

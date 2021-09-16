@@ -1,0 +1,65 @@
+<body><hr></body><h3><body>{{employeestatus}}<br><hr></body></h3>
+<body>
+<form #employeeDetails="ngForm" (ngSubmit)="onclicksubmit(employeeDetails.value)" >
+  <div>
+    Id* <input type="number" class="input1" [(ngModel)]="emptemp.id" name= "id" #empid="ngModel" required pattern="^[0-9]{1,}$">
+    <div *ngIf="empid.invalid && (empid.dirty||empid.touched)">
+      <div *ngIf= "empid.errors?.required">
+        ID field cannot be blank
+      </div>
+      
+    </div>
+    
+    <br><br>
+    Name* <input type="text" class="input1" [(ngModel)]="emptemp.name" name= "name" #empname="ngModel" required pattern="^[a-zA-Z ]{1,32}$"><br>
+    <div *ngIf="empname.invalid && (empname.dirty||empname.touched)">
+      <div *ngIf= "empname.errors?.required">
+        Name field cannot be blank
+      </div>
+      <div *ngIf= "empname.errors?.pattern && empname.touched">
+        Name field should contain only alphabets
+      </div>
+      
+    </div>
+    <br>
+    Location* <input type="text" name= "location" class="input1" [(ngModel)]="emptemp.location" #emplocation="ngModel" required pattern="[a-zA-Z ]{1,32}">
+    <div *ngIf="emplocation.invalid && (emplocation.dirty||emplocation.touched)">
+      <div *ngIf= "emplocation.errors?.required">
+        Location field cannot be blank
+      </div>
+      <div *ngIf= "emplocation.errors?.pattern && emplocation.touched">
+        Location field should contain only alphabets
+      </div>
+      
+    </div>
+    <br><br>
+    Email* <input type="text" class="input1" name= "email" [(ngModel)]="emptemp.email" #empemail="ngModel" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br>
+    <div *ngIf="empemail.invalid && (empemail.dirty||empemail.touched)">
+      <div *ngIf= "empemail.errors?.required">
+        Email field cannot be blank.
+      </div>
+      <div *ngIf= "empemail.errors?.pattern && empemail.touched">
+        Enter a valid Email ID.
+      </div>
+      
+    </div>
+    <br>
+    Mobile* <input type="number" class="input1" name= "mobile" [(ngModel)]="emptemp.mobile" #empmobile="ngModel" required pattern="[0-9]{10,10}"><br>
+    <div *ngIf="empmobile.invalid && (empmobile.dirty||empmobile.touched)">
+      <div *ngIf= "empmobile.errors?.required">
+        Mobile field cannot be blank.
+      </div>
+      <div *ngIf= "empmobile.errors?.pattern && empmobile.touched">
+        Enter a valid 10 digit mobile number.
+      </div>
+      
+    </div><br>
+    <input class ="button input1"  type="submit" value="Submit" [disabled]="!employeeDetails.form.valid">
+    <br><br>
+    (*- Mandatory field)
+    
+    
+  </div>
+
+</form>
+</body>

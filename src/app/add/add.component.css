@@ -1,0 +1,17 @@
+.input1{
+    background-color: rgb(163, 212, 208);
+    position: absolute;
+        
+    left: 10%;
+  
+}
+.button {padding: 7px 24px;
+    background-color: rgba(24, 129, 124, 0.918);
+    color: lightskyblue;
+    }
+*{
+    background-color: rgba(102, 173, 170);
+}
+body{
+    background-color: rgba(102, 173, 170);
+}
